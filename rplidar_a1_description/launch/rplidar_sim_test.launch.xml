@@ -1,0 +1,31 @@
+<launch>
+    <let name="sdf_path" value="$(find-pkg-share rplidar_a1_description)/worlds/sim_test_world.sdf"/>
+    <let name="spawn_z_offset" value="0.1"/>
+    <let name="model_name" value='"RPLIDAR-A1"'/>
+
+    <include file="$(find-pkg-share rplidar_a1_description)/launch/rplidar_startup.launch.xml" />
+
+    <executable cmd="ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 world base_link" output="screen"/>
+    <executable cmd="ign gazebo $(var sdf_path) -v 4" output="screen"/>
+
+    <node
+            pkg="ros_ign_gazebo"
+            exec="create"
+            name="rplidar_spawn"
+            output="screen"
+            args="-file $(find-pkg-share rplidar_a1_description)/urdf/rplidar.urdf -z $(var spawn_z_offset)"/>
+
+    <executable cmd="ros2 run ros_ign_bridge parameter_bridge /world/empty/model/RPLIDAR-A1/joint_state@sensor_msgs/msg/JointState@ignition.msgs.Model" output="screen"/>
+    <executable cmd="ros2 run ros_ign_bridge parameter_bridge /lidar@sensor_msgs/msg/LaserScan[ignition.msgs.LaserScan" output="screen"/>
+    <executable cmd="ros2 run ros_ign_bridge parameter_bridge /lidar/points@sensor_msgs/msg/PointCloud2[ignition.msgs.PointCloudPacked" output="screen"/>
+
+    <let name="rviz_path" value="$(find-pkg-prefix rplidar_a1_description)/../../src/rsp_project/rplidar_a1_description/sim_test.rviz"/>
+    <node
+            pkg="rviz2"
+            exec="rviz2"
+            name="rviz2"
+            output="screen"
+            args="-d $(var rviz_path)"/>
+
+</launch>
+

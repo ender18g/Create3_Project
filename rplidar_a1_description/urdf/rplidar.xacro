@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!--
+  The following four macros are from the irobot_create_description package
+  -->
+  <xacro:macro name="inertial_cuboid_with_pose" params="mass x y z *origin">
+    <inertial>
+      <mass value="${mass}" />
+      <xacro:insert_block name="origin"/>
+      <inertia ixx="${(1/12) * mass * (y*y + z*z)}" ixy="0.0" ixz="0.0"
+               iyy="${(1/12) * mass * (x*x + z*z)}" iyz="0.0"
+               izz="${(1/12) * mass * (x*x + y*y)}" />
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="inertial_cuboid" params="mass x y z">
+    <xacro:inertial_cuboid_with_pose mass="${mass}" x="${x}" y="${y}" z="${z}">
+      <origin xyz="0 0 0" />
+    </xacro:inertial_cuboid_with_pose>
+  </xacro:macro>
+
+  <xacro:macro name="ray_sensor"
+               params="sensor_name gazebo update_rate visualize
+            h_samples h_res h_min_angle h_max_angle
+            v_samples:=1 v_res:=1 v_min_angle:=0 v_max_angle:=0
+            r_min r_max r_res *plugin">
+    <!-- Classic -->
+    <xacro:if value="${gazebo == 'classic'}">
+      <sensor type="ray" name="${sensor_name}">
+        <update_rate>${update_rate}</update_rate>
+        <visualize>${visualize}</visualize>
+        <always_on>true</always_on>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>${h_samples}</samples>
+              <resolution>${h_res}</resolution>
+              <min_angle>${h_min_angle}</min_angle>
+              <max_angle>${h_max_angle}</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>${v_samples}</samples>
+              <resolution>${v_res}</resolution>
+              <min_angle>${v_min_angle}</min_angle>
+              <max_angle>${v_max_angle}</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>${r_min}</min>
+            <max>${r_max}</max>
+            <resolution>${r_res}</resolution>
+          </range>
+        </ray>
+        <!-- Noise is currently disabled -->
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.0</stddev>
+        </noise>
+        <xacro:insert_block name="plugin"/>
+      </sensor>
+    </xacro:if>
+
+    <!-- Ignition -->
+    <xacro:if value="${gazebo == 'ignition'}">
+      <sensor name="${sensor_name}" type="gpu_lidar">
+        <update_rate>${update_rate}</update_rate>
+        <visualize>${visualize}</visualize>
+        <always_on>true</always_on>
+        <topic> lidar </topic>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>${h_samples}</samples>
+              <resolution>${h_res}</resolution>
+              <min_angle>${h_min_angle}</min_angle>
+              <max_angle>${h_max_angle}</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>${v_samples}</samples>
+              <resolution>${v_res}</resolution>
+              <min_angle>${v_min_angle}</min_angle>
+              <max_angle>${v_max_angle}</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>${r_min}</min>
+            <max>${r_max}</max>
+            <resolution>${r_res}</resolution>
+          </range>
+        </lidar>
+        <xacro:insert_block name="plugin"/>
+        <ignition_frame_id>${name}_link</ignition_frame_id>
+      </sensor>
+    </xacro:if>
+  </xacro:macro>
+
+  <xacro:macro name="material_darkgray">
+    <visual>
+      <material>
+        <diffuse>${3/255} ${3/255} ${3/255} 1</diffuse>
+        <specular>0 0 0 1</specular>
+        <emissive>0 0 0 1</emissive>
+      </material>
+    </visual>
+  </xacro:macro>
+
+
+  <!--
+  The following macro is from the turtlebot4_description package
+  -->
+  <xacro:macro name="rplidar" params="name parent_link gazebo *origin">
+
+  <xacro:property name="cm2m"    value="${1/100.0}"/>
+  <xacro:property name="mass"       value="0.17"/>
+  <xacro:property name="length_x"   value="${7.1*cm2m}" />
+  <xacro:property name="length_y"   value="${10*cm2m}" />
+  <xacro:property name="length_z"   value="${6*cm2m}" />
+
+  <xacro:property name="collision_x_offset"       value="${0*cm2m}" />
+  <xacro:property name="collision_y_offset"       value="${1.3*cm2m}" />
+  <xacro:property name="collision_z_offset"       value="${-1.9*cm2m}" />
+
+  <link name="${name}_link">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find rplidar_a1_description)/meshes/rplidar.dae"
+              scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="${collision_x_offset} ${collision_y_offset} ${collision_z_offset}"/>
+      <geometry>
+        <box size="${length_x} ${length_y} ${length_z}"/>
+      </geometry>
+    </collision>
+    <xacro:inertial_cuboid mass="0.17" x="${length_x}" y="${length_y}" z="${length_z}"/>
+  </link>
+
+  <gazebo reference="${name}_link">
+    <xacro:ray_sensor sensor_name="${name}" gazebo="${gazebo}" 
+                  update_rate="62.0" visualize="1" 
+                  h_samples="640" h_res="1.0" h_min_angle="${-pi}" h_max_angle="${pi}" 
+                  r_min="0.164" r_max="12.0" r_res="0.01">
+                  <plugin name="ignition::gazebo::systems::Sensors"
+                          filename="libignition-gazebo-sensors-system.so"/>
+    </xacro:ray_sensor>
+    <xacro:material_darkgray/>
+  </gazebo>
+
+  <joint name="${name}_joint" type="fixed">
+    <parent link="${parent_link}"/>
+    <child link="${name}_link"/>
+    <xacro:insert_block name="origin"/>
+  </joint>
+
+  <gazebo reference="${name}_joint">
+    <preserveFixedJoint>true</preserveFixedJoint>
+  </gazebo>
+
+    <gazebo>
+      <plugin filename="libignition-gazebo-joint-state-publisher-system.so"
+              name="ignition::gazebo::systems::JointStatePublisher"/>
+    </gazebo>
+
+</xacro:macro>
+</robot>
