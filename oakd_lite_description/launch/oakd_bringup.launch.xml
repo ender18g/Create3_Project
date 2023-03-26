@@ -1,4 +1,6 @@
 <launch>
+    <arg name="urdfDir" default = "$(find-pkg-share oakd_lite_description)/urdf/oakd_lite.urdf"/>
+    <arg name = "v1" default = "sdf_filename: &quot;$(var urdfDir)&quot;, name: &quot;oakd_lite&quot;"/>
 
     <node
         pkg = "robot_state_publisher"
@@ -21,7 +23,10 @@
         exec = "rviz2"
         name = "rviz_node"
         output = "screen"
-        args="-f world -d $(find-pkg-share oakd_lite_description)/config/oakd_lite_rviz_config.rviz">
+        args="-f world -d $(find-pkg-share oakd_lite_description)/config/oakd_lite_rviz_config.rviz"> <!-- when connecting cam to new link we will need to chanage the default frame from "World"--> 
     </node>
 
+    <executable cmd = "xacro $(find-pkg-share oakd_lite_description)/urdf/oakd_lite.urdf.xacro -o $(find-pkg-share oakd_lite_description)/urdf/oakd_lite.urdf"/> <!-- Update urdf in shaed directory so we done have to run xacro after build-->
+    <executable cmd = "ign gazebo -v 4 empty.sdf" output = "screen"/>
+    <executable cmd = "ign service -i -s world/empty/create --reqtype ignition.msgs.EntityFactory --reptype ignition.msgs.Boolean --timeout 1000 --req $(var v1)"/>
 </launch>
