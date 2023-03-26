@@ -1,0 +1,27 @@
+<launch>
+
+    <node
+        pkg = "robot_state_publisher"
+        exec = "robot_state_publisher"
+        name = "robot_state_publisher"
+        output = "screen">
+        <param name = "robot_description" value = "&quot;$(command 'xacro $(find-pkg-share oakd_lite_description)/urdf/oakd_lite.urdf.xacro')&quot;"/>        
+    </node>
+
+    <node
+        pkg = "joint_state_publisher"
+        exec = "joint_state_publisher"
+        name = "joint_state_publisher"
+        output = "screen">
+    </node>
+
+
+    <node
+        pkg = "rviz2"
+        exec = "rviz2"
+        name = "rviz_node"
+        output = "screen"
+        args="-f world -d $(find-pkg-share oakd_lite_description)/config/oakd_lite_rviz_config.rviz">
+    </node>
+
+</launch>

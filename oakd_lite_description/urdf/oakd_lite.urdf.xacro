@@ -1,0 +1,13 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name = "OAKD_Lite_Camera">
+
+    <xacro:include filename="$(find oakd_lite_description)/urdf/oakd_lite.xacro" />
+    <xacro:oakd name = "oakd" parent_link = "world">
+        <origin xzy = " 0 0 0 " rpy = " 1.57 0 1.57"/>
+    </xacro:oakd>
+
+    <!-- Remove World link and set above parent link to whatever link you would like to attach the camera to-->
+    <link name = "world">
+        <origin xzy = " 0 0 0 " rpy = " 0 0 0"/>
+    </link>
+
+</robot>
