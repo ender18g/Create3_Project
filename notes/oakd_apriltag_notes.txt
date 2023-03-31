@@ -1,0 +1,22 @@
+apriltag_ros :
+https://github.com/christianrauch/apriltag_ros
+
+apriltag_msgs:
+https://github.com/christianrauch/apriltag_msgs
+
+apriltag:
+https://github.com/AprilRobotics/apriltag
+
+
+After building and sourcing the command to launch april tag detecion node is:
+ros2 run apriltag_ros apriltag_node --ros-args -r image_rect:=/color/image -r camera_info:=/color/camera_info --params-file tags_36h11.yaml
+
+#params-file path is realative to where ros2 run is typed from
+
+Transforms are published to:
+/tf
+
+#Transform frame_id is set to <familytype>:<id> which is inherent and unique to each tag based upon its image
+
+Additonal info is pulished to :
+/detections
