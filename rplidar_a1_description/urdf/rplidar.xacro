@@ -20,7 +20,7 @@
     </xacro:inertial_cuboid_with_pose>
   </xacro:macro>
 
-  <xacro:macro name="ray_sensor"
+  <xacro:macro name="rp_ray_sensor"
                params="sensor_name gazebo update_rate visualize
             h_samples h_res h_min_angle h_max_angle
             v_samples:=1 v_res:=1 v_min_angle:=0 v_max_angle:=0
@@ -139,13 +139,13 @@
   </link>
 
   <gazebo reference="${name}_link">
-    <xacro:ray_sensor sensor_name="${name}" gazebo="${gazebo}" 
+    <xacro:rp_ray_sensor sensor_name="${name}" gazebo="${gazebo}"
                   update_rate="62.0" visualize="1" 
                   h_samples="640" h_res="1.0" h_min_angle="${-pi}" h_max_angle="${pi}" 
                   r_min="0.164" r_max="12.0" r_res="0.01">
                   <plugin name="ignition::gazebo::systems::Sensors"
                           filename="libignition-gazebo-sensors-system.so"/>
-    </xacro:ray_sensor>
+    </xacro:rp_ray_sensor>
     <xacro:material_darkgray/>
   </gazebo>
 
