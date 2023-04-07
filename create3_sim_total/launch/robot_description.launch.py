@@ -23,8 +23,8 @@ ARGUMENTS = [
 
 
 def generate_launch_description():
-    pkg_create3_description = get_package_share_directory('irobot_create_description')
-    xacro_file = PathJoinSubstitution([pkg_create3_description, 'urdf', 'create3.urdf.xacro'])
+    pkg_create3_description = get_package_share_directory('create3_sim_total')
+    xacro_file = PathJoinSubstitution([pkg_create3_description, 'urdf', 'create3_total.urdf.xacro'])
     gazebo_simulator = LaunchConfiguration('gazebo')
     visualize_rays = LaunchConfiguration('visualize_rays')
 

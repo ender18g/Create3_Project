@@ -96,7 +96,6 @@ def generate_launch_description():
         [pkg_irobot_create_common_bringup, 'launch', 'create3_nodes.launch.py'])
     create3_ignition_nodes_launch = PathJoinSubstitution(
         [pkg_irobot_create_ignition_bringup, 'launch', 'create3_ignition_nodes.launch.py'])
-    #TODO: use the new robot_description.launch.py in this package, not from irobot_create_common_bringup
     robot_description_launch = PathJoinSubstitution(
         [pkg_create3_sim_total, 'launch', 'robot_description.launch.py'])
     dock_description_launch = PathJoinSubstitution(
