@@ -147,10 +147,14 @@
       <always_on>1</always_on>
       <update_rate>30</update_rate>
       <visualize>true</visualize>
-      <plugin filename = "ignition-gazebo-sensors-system" 
+      <!-- <plugin filename = "ignition-gazebo-sensors-system" 
         name = "ignition::gazebo::systems::Sensors">
         <render_engine>ogre2</render_engine>
+<<<<<<< Updated upstream
       </plugin>
+=======
+      </plugin> -->
+>>>>>>> Stashed changes
     </sensor>
   </gazebo>
 

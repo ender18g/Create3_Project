@@ -13,6 +13,7 @@ find_package(urdf REQUIRED)
 # find_package(xacro REQUIRED)
 
 
+
 install (DIRECTORY urdf DESTINATION share/${PROJECT_NAME})
 install (DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 install (DIRECTORY meshes DESTINATION share/${PROJECT_NAME})
@@ -22,7 +23,7 @@ install (DIRECTORY worlds DESTINATION share/${PROJECT_NAME})
 # set( IGN_PLUGIN_VER ${ignition-plugin1_VERSION_MAJOR} )
 # set( IGN_GAZEBO_VER ${ignition-gazebo5_VERSION_MAJOR} )
 
-# target_link_libraries( rsp_plugin
+# target_link_libraries( ignition-gazebo-sensors-system
 #   PRIVATE ignition-plugin${IGN_PLUGIN_VER}::ignition-plugin${IGN_PLUGIN_VER}
 #   PRIVATE ignition-gazebo${IGN_GAZEBO_VER}::ignition-gazebo${IGN_GAZEBO_VER} )
 

@@ -144,7 +144,9 @@
                   h_samples="640" h_res="1.0" h_min_angle="${-pi}" h_max_angle="${pi}" 
                   r_min="0.164" r_max="12.0" r_res="0.01">
                   <plugin name="ignition::gazebo::systems::Sensors"
-                          filename="libignition-gazebo-sensors-system.so"/>
+                          filename="libignition-gazebo-sensors-system.so">
+                    <render_engine>ogre2</render_engine>
+                  </plugin>
     </xacro:rp_ray_sensor>
     <xacro:material_darkgray/>
   </gazebo>
