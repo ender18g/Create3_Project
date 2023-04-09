@@ -1,0 +1,11 @@
+note : execute all commands from ws level directory
+
+1. Pull from git to get sim
+
+2. rosdep update --include-eol-distros
+
+3. sudo apt-get update
+
+4. rosdep install --from-path src -yi
+
+5. build

@@ -210,15 +210,15 @@
   </xacro:ir_intensity>
 
   <!-- Added Sensors -->
-  <!--
+  
   <xacro:oakd name="oakd" parent_link="base_link">
-    <origin xzy = " 0 0 0 " rpy = " 1.57 0 -1.57"/>
+    <origin xyz = " 0 0 0.5 " rpy = " 1.57 0 -1.57"/>
   </xacro:oakd>
 
-  <xacro:rplidar name="rplidar" parent_link="base_link" gazebo="ignition">
+  <!-- <xacro:rplidar name="rplidar" parent_link="base_link" gazebo="ignition">
     <origin xyz="0 0 0" rpy="0 0 0"/>
-  </xacro:rplidar>
-  -->
+  </xacro:rplidar> -->
+ 
 
   <!-- Buttons -->
   <xacro:button
@@ -290,12 +290,12 @@
     <gazebo>
       <plugin filename="libignition-gazebo-contact-system.so" name="ignition::gazebo::systems::Contact"></plugin>
     </gazebo>
-
+<!-- 
     <gazebo>
       <plugin filename="libignition-gazebo-sensors-system.so" name="ignition::gazebo::systems::Sensors">
         <render_engine>ogre</render_engine>
       </plugin>
-    </gazebo>
+    </gazebo> -->
   </xacro:if>
 
 </robot>

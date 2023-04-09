@@ -11,7 +11,7 @@
     
     <xacro:include filename="$(find oakd_lite_description)/urdf/oakd_lite.xacro" />
     <xacro:oakd name="oakd" parent_link="world">
-        <origin xzy = " 0 0 0 " rpy = " 1.57 0 -1.57"/>
+        <origin xyz = " 0 0 0 " rpy = " 1.57 0 -1.57"/>
     </xacro:oakd>
 
     

@@ -19,6 +19,13 @@ install (DIRECTORY meshes DESTINATION share/${PROJECT_NAME})
 install (DIRECTORY config DESTINATION share/${PROJECT_NAME})
 install (DIRECTORY worlds DESTINATION share/${PROJECT_NAME})
 
+# set( IGN_PLUGIN_VER ${ignition-plugin1_VERSION_MAJOR} )
+# set( IGN_GAZEBO_VER ${ignition-gazebo5_VERSION_MAJOR} )
+
+# target_link_libraries( rsp_plugin
+#   PRIVATE ignition-plugin${IGN_PLUGIN_VER}::ignition-plugin${IGN_PLUGIN_VER}
+#   PRIVATE ignition-gazebo${IGN_GAZEBO_VER}::ignition-gazebo${IGN_GAZEBO_VER} )
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights

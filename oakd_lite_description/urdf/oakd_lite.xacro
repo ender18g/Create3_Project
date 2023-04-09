@@ -149,6 +149,7 @@
       <visualize>true</visualize>
       <plugin filename = "ignition-gazebo-sensors-system" 
         name = "ignition::gazebo::systems::Sensors">
+        <render_engine>ogre</render_engine>
       </plugin>
     </sensor>
   </gazebo>
