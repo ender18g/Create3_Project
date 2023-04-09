@@ -9,3 +9,9 @@ note : execute all commands from ws level directory
 4. rosdep install --from-path src -yi
 
 5. build
+
+
+debug notes:
+1. Can only import sensor plugins once throughout the entire urdf, might apply to other plugins as well
+2. oakd bringup launch file works, but if you force ignition version 5, the output is all black, which matches
+    the behavior in the total sim launch file (which is where we also force version 5)
