@@ -186,6 +186,26 @@ def generate_launch_description():
                                    '[ignition.msgs.Int32']
                               ])
 
+    # lidar bridge
+    lidar_bridge = Node(package='ros_ign_bridge', executable='parameter_bridge',
+                        namespace=namespace,
+                        name='lidar_bridge',
+                        output='screen',
+                        arguments=[
+                            '/rplidar' + '@sensor_msgs/msg/LaserScan' + '[ignition.msgs.LaserScan'
+                        ],
+                        condition=IfCondition(use_sim_time))
+
+    # camera bridge
+    camera_bridge = Node(package='ros_ign_bridge', executable='parameter_bridge',
+                        namespace=namespace,
+                        name='camera_bridge',
+                        output='screen',
+                        arguments=[
+                            '/oakd_lite/image' + '@sensor_msgs/msg/Image' + '[ignition.msgs.Image'
+                        ],
+                        condition=IfCondition(use_sim_time))
+
     # Create launch description and add actions
     ld = LaunchDescription(ARGUMENTS)
     ld.add_action(clock_bridge)
@@ -196,4 +216,6 @@ def generate_launch_description():
     ld.add_action(cliff_bridge)
     ld.add_action(ir_intensity_bridge)
     ld.add_action(buttons_msg_bridge)
+    ld.add_action(lidar_bridge)
+    ld.add_action(camera_bridge)
     return ld
