@@ -202,7 +202,7 @@ def generate_launch_description():
                         name='camera_bridge',
                         output='screen',
                         arguments=[
-                            '/oakd_lite/image' + '@sensor_msgs/msg/Image' + '[ignition.msgs.Image'
+                            '/color/image' + '@sensor_msgs/msg/Image' + '[ignition.msgs.Image'
                         ],
                         condition=IfCondition(use_sim_time))
 
