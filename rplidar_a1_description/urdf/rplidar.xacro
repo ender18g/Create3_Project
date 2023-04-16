@@ -68,7 +68,7 @@
         <update_rate>${update_rate}</update_rate>
         <visualize>${visualize}</visualize>
         <always_on>true</always_on>
-        <topic> rplidar </topic>
+        <topic> scan </topic>
         <lidar>
           <scan>
             <horizontal>

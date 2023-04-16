@@ -192,7 +192,7 @@ def generate_launch_description():
                         name='lidar_bridge',
                         output='screen',
                         arguments=[
-                            '/rplidar' + '@sensor_msgs/msg/LaserScan' + '[ignition.msgs.LaserScan'
+                            '/scan' + '@sensor_msgs/msg/LaserScan' + '[ignition.msgs.LaserScan'
                         ],
                         condition=IfCondition(use_sim_time))
 
