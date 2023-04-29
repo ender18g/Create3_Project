@@ -161,13 +161,6 @@
     <preserveFixedJoint>true</preserveFixedJoint>
   </gazebo>
 
-  <link name="base_footprint"/>
-  <joint name="base_footprint_fixed_joint" type="fixed">
-    <parent link="laser_frame"/>
-    <child link="base_footprint"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint>
-
     <gazebo>
       <plugin filename="libignition-gazebo-joint-state-publisher-system.so"
               name="ignition::gazebo::systems::JointStatePublisher"/>
