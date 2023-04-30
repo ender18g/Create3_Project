@@ -1,0 +1,11 @@
+Apriltag sim is achived from Apriltag_gazebo package
+
+5 april tag models are included : Apriltag36_11_00000 - Apriltag36_11_00005
+
+To bring up a tag in gazebo simply launch apriltag_gazebo.launch.py
+
+tag_name can be set to one the 5 tags, default is tage 0
+
+
+TODO : Bring up tags in sim with camera
+TODO : Bring up tag attached to create 3 Follow robot. This is only a todo if we get to leader follower
