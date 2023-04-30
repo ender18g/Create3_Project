@@ -1,10 +1,8 @@
-import os
-from launch.launch_context import LaunchContext
 from launch import LaunchDescription
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, ExecuteProcess
 
 tag_name_arg = DeclareLaunchArgument("tag_name", default_value="Apriltag36_11_00000", description="Name of april tag to spawn")
 tag_name = LaunchConfiguration("tag_name")

@@ -2,9 +2,11 @@ Apriltag sim is achived from Apriltag_gazebo package
 
 5 april tag models are included : Apriltag36_11_00000 - Apriltag36_11_00005
 
-To bring up a tag in gazebo simply launch apriltag_gazebo.launch.py
+To bring up a tag in gazebo simply launch apriltag_single.launch.py
 
-tag_name can be set to one the 5 tags, default is tage 0
+"tag_name" can be set to one the 5 tags, default is tage 0
+
+apriltag_simulation.launch.py will launch the april tag specificed by "tag_name" (same default) as well as the camera and apriltag_tranform generator. Transforms will be published to /tf topic
 
 
 TODO : Bring up tags in sim with camera
