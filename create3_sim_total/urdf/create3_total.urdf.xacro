@@ -218,7 +218,15 @@
   <xacro:rplidar name="rplidar" parent_link="base_link" gazebo="ignition">
     <origin xyz="0 0 0.14" rpy="0 0 0"/>
   </xacro:rplidar>
- 
+
+  <link name="base_footprint"/>
+  <joint name="base_footprint_fixed_joint" type="fixed">
+    <parent link="laser_frame"/>
+    <child link="base_footprint"/>
+    <origin xyz="0.012 0 -0.144" rpy="0 0 0"/>
+  </joint>
+
+
 
   <!-- Buttons -->
   <xacro:button

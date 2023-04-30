@@ -1,0 +1,12 @@
+* on robot:
+  * startup scripts launch:
+    * ros2 launch create3_lidar sensors_launch.py (from the create3 lidar example)
+    * the camera driver (mobile_publisher) 
+
+* on laptop:
+  * ros2 launch create3_lidar slam_toolbox_launch.py (rom the create3 lidar example)
+    * wait for the message: [async_slam_toolbox_node-1] Registering sensor: [Custom Described Lidar]
+  * ros2 run teleop_twist_keyboard teleop_twist_keyboard
+  * ros2 run rviz2 rviz2 -d <path_to_create3_examples_install_share>/lidar/rviz/<something>.rviz
+
+  
