@@ -1,0 +1,6 @@
+
+Install on local systm according to instruction on 
+https://navigation.ros.org/tutorials/docs/camera_calibration.html
+
+Proper command for using the provided checkerboards
+ros2 run camera_calibration cameracalibrator --size 7x10 --square 0.0195 --pattern chessboard --ros-args -r image:=/color/image -p camera:=/color/camera_info
