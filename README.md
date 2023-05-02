@@ -7,5 +7,5 @@ https://ender18g.github.io/Create3_Project/#/
 #### Integrating a iRobot Create 3, Rplidar and Oak D Lite camera
 
 #### SLAM
-![SLAM Robot](robot.gif)
-![Slam Example](slam.gif)
+![SLAM Robot](docs/images/robot.gif)
+![Slam Example](docs/images/slam.gif)
