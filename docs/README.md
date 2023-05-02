@@ -1,10 +1,10 @@
 
 # Create3 Project
 
-A gazebo simulation environment and hardware libraries for executing SLAM and AprilTag detectiong with a create3 robot, Rplidar A1 Lidar, and Oak D Lite camera. 
+A gazebo simulation environment and hardware libraries for executing SLAM and AprilTag detection with a Create3 robot, an RPLIDAR-A1 laser range scanner, and an Oak-D Lite camera. 
 
 ## About the Project
-This project was created for Robot Systems Programming at Johns Hopkins University.
+This project was created for EN.530.707 - Robot System Programming at Johns Hopkins University.
 
 Contributors:
 - Alex Alessi
