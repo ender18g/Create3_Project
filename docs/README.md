@@ -21,7 +21,7 @@ Note: the following build instructions were tested on a fresh Galactic desktop i
 
 Create a workspace
 ```
-mdkir ~/project_ws
+mkdir ~/project_ws
 cd ~/project_ws
 mkdir src
 cd src
