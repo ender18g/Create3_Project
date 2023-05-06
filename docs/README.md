@@ -80,3 +80,35 @@ Start RVIZ2
 ```
 ros2 run rviz2 rviz2 -d  ~/project_ws/install/create3_lidar/share/create3_lidar/rviz/create3_lidar.rviz
 ```
+
+## Running Foxglove Studio
+
+![Foxglove](images/foxglove1.png)
+
+
+Foxglove studio allows viewing visualizations and subscribing/publishing to ros2 topics through the web browser. This allows students to view the robot status and performance without having to install ROS2. Only a web browser (Chrome is recommended) is required.
+
+Install Foxglove bridge
+```
+sudo apt install ros-galactic-foxglove-bridge
+```
+
+Start your Foxglove bridge on a computer with ROS2 Galactic:
+```
+ros2 launch foxglove_bridge foxglove_bridge_launch.xml port:=8765
+```
+
+Now visit studio.foxglove.dev to see your dashboard and visualizations.
+
+
+
+
+
+
+
+
+
+
+
+
+
