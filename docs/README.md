@@ -96,7 +96,7 @@ sudo apt install ros-galactic-foxglove-bridge
 
 Start your Foxglove bridge on a computer with ROS2 Galactic:
 ```
-ros2 launch foxglove_bridge foxglove_bridge_launch.xml port:=8765
+ros2 run foxglove_bridge foxglove_bridge_launch.xml port:=8765
 ```
 
 Now visit studio.foxglove.dev to see your dashboard and visualizations.
