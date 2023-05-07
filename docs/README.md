@@ -55,6 +55,7 @@ source install/setup.bash
 ```
 
 ## Simulation with Ignition Gazebo
+![Ignition Simulation](images/simulation.png)
 To run lidar SLAM in simulation with Ignition Gazebo, run the example launch file:
 ```
 ros2 launch create3_sim_total create3_sim_SLAM.launch.py
