@@ -65,23 +65,25 @@ ros2 launch create3_sim_total create3_sim_SLAM.launch.py
 ### Starting Robot
 Power on the create3 by holding down the power button. The Raspberry Pi 4 will boot and will automatically begin publishing Lidar Scan messages, camera images, along with robot information topics.
 
-If you need to start the raspberry pi sensor nodes manually:
-
-For the RPLIDAR:
---From Raspberry Pi SSH--
+ To setup and manually start the sensor nodes on the Raspberry Pi:
+ 1. Flash an Ubuntu 20.04 image onto an SD Card for the Raspberry pi:
+ 2. Install ROS2 Galactic on the SD Card
+ 3. Install the following ROS2 Galactic Packges on the Raspberry Pi:
+ ```
+ sudo apt update
+ sudo apt install ros-galactic-rplidar-ros
+ sudo apt install ros-galactic-depthai-ros
+ ```
+4. To manually start the RPLIDAR publisher:
 ```
-Command Here
+ros2 launch rplidar_ros rplidar.launch.py
 ```
-
-For the Oak D Lite Camera:
---From Raspberry Pi SSH--
+5. To manually start the Oak D Lite Camera publisher:
 ```
-Command Here
+ros2 launch depthai_examples mobile_publisher.launch.py
 ```
-
 
 To drive the robot from a laptop, use teleop_twist_keyboard:
---From Laptop Terminal---
 ```
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
