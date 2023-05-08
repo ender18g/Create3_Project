@@ -65,7 +65,23 @@ ros2 launch create3_sim_total create3_sim_SLAM.launch.py
 ### Starting Robot
 Power on the create3 by holding down the power button. The Raspberry Pi 4 will boot and will automatically begin publishing Lidar Scan messages, camera images, along with robot information topics.
 
+If you need to start the raspberry pi sensor nodes manually:
+
+For the RPLIDAR:
+--From Raspberry Pi SSH--
+```
+Command Here
+```
+
+For the Oak D Lite Camera:
+--From Raspberry Pi SSH--
+```
+Command Here
+```
+
+
 To drive the robot from a laptop, use teleop_twist_keyboard:
+--From Laptop Terminal---
 ```
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
