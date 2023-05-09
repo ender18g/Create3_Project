@@ -103,7 +103,7 @@ def generate_launch_description():
     dock_description_launch = PathJoinSubstitution(
         [pkg_irobot_create_common_bringup, 'launch', 'dock_description.launch.py'])
     create3_lidar_rviz_config = PathJoinSubstitution(
-        [pkg_create3_lidar, 'rviz', 'create3_lidar.rviz'])
+        [pkg_create3_sim_total, 'rviz', 'sim_SLAM_config.rviz'])
     create3_lidar_slam_launch = PathJoinSubstitution(
         [pkg_create3_lidar, 'launch', 'slam_toolbox_launch.py'])
 

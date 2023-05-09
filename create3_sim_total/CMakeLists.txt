@@ -24,6 +24,7 @@ find_package(apriltag_ros REQUIRED)
 
 
 install( DIRECTORY urdf DESTINATION share/${PROJECT_NAME} )
+install( DIRECTORY rviz DESTINATION share/${PROJECT_NAME} )
 install( DIRECTORY launch DESTINATION share/${PROJECT_NAME} )
 
 if(BUILD_TESTING)
