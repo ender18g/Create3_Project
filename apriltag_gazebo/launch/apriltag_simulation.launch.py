@@ -25,7 +25,7 @@ param_file = PathJoinSubstitution([april_ros_package_dir, 'cfg', 'tags_3611.yaml
 def generate_launch_description():
 
     camera_bringup_L = IncludeLaunchDescription(AnyLaunchDescriptionSource([get_package_share_directory("oakd_lite_description"),
-                                                                            '/launch', '/oakd_bringup.launch.xml']))
+                                                                            '/launch', '/oakd_bringup_april.launch.xml']))
 
     spawn_april_N = Node(
         package='ros_ign_gazebo',
@@ -47,8 +47,8 @@ def generate_launch_description():
         name = "apriltag_transform_node",
         output = 'screen',
         remappings=[
-            ('image_rect', '/oakd_lite/image'),
-            ('camera_info', 'oakd_lite/camera_info'),
+            ('image_rect', '/color/image'),
+            ('camera_info', '/color/camera_info'),
         ],
         arguments=['--params-file', param_file],
 

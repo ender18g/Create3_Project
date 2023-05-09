@@ -1,7 +1,7 @@
 <launch>
     <arg name = "offset" default = "0.5"/>
 
-    <executable cmd = "xacro $(find-pkg-share oakd_lite_description)/urdf/oakd_lite.urdf.xacro -o $(find-pkg-share oakd_lite_description)/urdf/oakd_lite.urdf"/> <!-- Update urdf in shaed directory so we done have to run xacro after build-->
+    <executable cmd = "xacro $(find-pkg-share oakd_lite_description)/urdf/oakd_lite_april.urdf.xacro -o $(find-pkg-share oakd_lite_description)/urdf/oakd_lite_april.urdf"/> <!-- Update urdf in shaed directory so we done have to run xacro after build-->
     <executable cmd = "ign gazebo -v 4 $(find-pkg-share oakd_lite_description)/worlds/oakd_lite_world.sdf" output = "screen"/>
     <executable cmd = "ros2 run ros_ign_bridge parameter_bridge color/image@sensor_msgs/msg/Image[ignition.msgs.Image"/>
     <executable cmd = "ros2 run ros_ign_bridge parameter_bridge color/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo"/>
@@ -35,7 +35,7 @@
         exec = "create"
         name = "oakd_lite_spawn"
         output = "screen"
-        args = "-file $(find-pkg-share oakd_lite_description)/urdf/oakd_lite.urdf -z $(var offset)"/>
+        args = "-file $(find-pkg-share oakd_lite_description)/urdf/oakd_lite_april.urdf -z $(var offset)"/>
 
 
     

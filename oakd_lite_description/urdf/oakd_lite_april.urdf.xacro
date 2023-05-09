@@ -1,0 +1,19 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name = "OAKD_Lite_Camera">
+    
+    <!-- Remove World link and set above parent link to whatever link you would like to attach the camera to. Change default RVIZ framein launch file-->
+    <link name = "world">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+        </inertial>
+    </link>
+    
+    <xacro:include filename="$(find oakd_lite_description)/urdf/oakd_lite_april.xacro" />
+    <xacro:oakd name="oakd" parent_link="world">
+        <origin xyz = " 0 0 0 " rpy = " 1.57 0 -1.57"/>
+    </xacro:oakd>
+
+    
+
+</robot>
