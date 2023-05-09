@@ -115,9 +115,9 @@ ros2 run rviz2 rviz2 -d  ~/project_ws/install/create3_lidar/share/create3_lidar/
 Install Camera Calibration Parser, Camera Info Manager and Launch Testing Ament Cmake using operating system’s package manager:
 
 ```
-sudo apt install ros-<ros2-distro>-camera-calibration-parsers
-sudo apt install ros-<ros2-distro>-camera-info-manager
-sudo apt install ros-<ros2-distro>-launch-testing-ament-cmake
+sudo apt install ros-galactic-camera-calibration-parsers
+sudo apt install ros-galactic-camera-info-manager
+sudo apt install ros-galactic-launch-testing-ament-cmake
 ```
 
 With the camera connected to your system run the following command to begin publishing camera images
