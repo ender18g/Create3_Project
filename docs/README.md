@@ -111,6 +111,39 @@ Start RVIZ2
 ros2 run rviz2 rviz2 -d  ~/project_ws/install/create3_lidar/share/create3_lidar/rviz/create3_lidar.rviz
 ```
 
+### Camera Calibration
+
+Install Camera Calibration Parser, Camera Info Manager and Launch Testing Ament Cmake using operating system’s package manager:
+
+```
+sudo apt install ros-<ros2-distro>-camera-calibration-parsers
+sudo apt install ros-<ros2-distro>-camera-info-manager
+sudo apt install ros-<ros2-distro>-launch-testing-ament-cmake
+```
+
+With the camera connected to your system run the following command to begin publishing camera images
+```
+ros2 launch depthai_examples mobile_publisher.launch.py
+```
+
+Camera images should now be publishing to the "/color/image" topic. You can check this with 
+```
+ros2 topic echo /color/image
+```
+
+Begin camera calibration by running. Note --size and --sqaure will vary depending upon the exact checkerboard being used for calibration.
+```
+ros2 run camera_calibration cameracalibrator --size 7x10 --square 0.0195 --pattern chessboard --ros-args -r image:=/color/image -p camera:=/color/camera_info
+```
+
+Once all four calibration bars are green pressing calibrate and save will generate a calibration.tar.gz file, saved to "/tmp/" directory. Running
+```
+tar -xvf calibration.tar.gz
+```
+will unzip this file.
+ ost.yaml will contain the desired camera parameters.
+
+
 ## Running Foxglove Studio
 
 ![Foxglove](images/foxglove1.png)
