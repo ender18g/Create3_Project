@@ -61,6 +61,17 @@ To run lidar SLAM in simulation with Ignition Gazebo, run the example launch fil
 ros2 launch create3_sim_total create3_sim_SLAM.launch.py
 ```
 
+![Apriltag Ignition Simulation](images/Apriltag_sim.png)
+To run AprilTag Detection in simulation with Ignition Gazebo, run the example launch file:
+```
+ros2 launch apriltag_gazebo apriltag_simulation.launch.py
+```
+
+To view AprilTag tranforms run the following command
+```
+ros2 topic echo /tf
+```
+
 ## Using the Hardware
 ### Starting Robot
 Power on the create3 by holding down the power button. The Raspberry Pi 4 will boot and will automatically begin publishing Lidar Scan messages, camera images, along with robot information topics.
