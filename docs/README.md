@@ -112,7 +112,6 @@ ros2 run rviz2 rviz2 -d  ~/project_ws/install/create3_lidar/share/create3_lidar/
 ```
 
 ### Camera Calibration
-
 Install Camera Calibration Parser, Camera Info Manager and Launch Testing Ament Cmake using operating system’s package manager:
 
 ```
