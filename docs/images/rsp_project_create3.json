@@ -1,0 +1,414 @@
+{
+  "configById": {
+    "3D!284p3aq": {
+      "cameraState": {
+        "perspective": true,
+        "distance": 2.7055190855806104,
+        "phi": 59.99999999999912,
+        "thetaOffset": 44.99999999999992,
+        "targetOffset": [
+          -0.10946638938159826,
+          -0.020025840403108112,
+          2.199814901052707e-17
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "followTf": "base_link",
+      "scene": {
+        "transforms": {
+          "labelSize": 0.08999999999999997
+        }
+      },
+      "transforms": {
+        "frame:green_buoy_link": {
+          "visible": false
+        },
+        "frame:std_dock_link": {
+          "visible": false
+        },
+        "frame:halo_link": {
+          "visible": false
+        },
+        "frame:red_buoy_link": {
+          "visible": false
+        },
+        "frame:yellow_buoy_link": {
+          "visible": false
+        },
+        "frame:odom": {
+          "visible": false
+        },
+        "frame:map": {
+          "visible": false
+        },
+        "frame:create3/right_wheel": {
+          "visible": false
+        },
+        "frame:create3": {
+          "visible": false
+        },
+        "frame:create3/left_wheel": {
+          "visible": false
+        },
+        "frame:create3/oakd_right_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:create3/oakd_right_camera_frame": {
+          "visible": false
+        },
+        "frame:create3/oakd_rgb_camera_frame": {
+          "visible": false
+        },
+        "frame:create3/oakd_left_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:create3/oakd_imu_frame": {
+          "visible": false
+        },
+        "frame:create3/oakd_link": {
+          "visible": false
+        },
+        "frame:create3/mouse": {
+          "visible": false
+        },
+        "frame:create3/base_link": {
+          "visible": false
+        },
+        "frame:create3/ir_intensity_right": {
+          "visible": false
+        },
+        "frame:create3/oakd_left_camera_frame": {
+          "visible": false
+        },
+        "frame:create3/bump_front_center": {
+          "visible": false
+        },
+        "frame:create3/ir_intensity_front_left": {
+          "visible": false
+        },
+        "frame:create3/oakd_rgb_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:create3/front_caster_link": {
+          "visible": false
+        },
+        "frame:create3/ir_intensity_left": {
+          "visible": false
+        },
+        "frame:create3/laser_frame": {
+          "visible": false
+        },
+        "frame:create3/imu_link": {
+          "visible": false
+        },
+        "frame:create3/ir_intensity_front_center_left": {
+          "visible": false
+        },
+        "frame:create3/wheel_drop_left": {
+          "visible": false
+        },
+        "frame:create3/ir_intensity_front_center_right": {
+          "visible": false
+        },
+        "frame:create3/wheel_drop_right": {
+          "visible": false
+        },
+        "frame:create3/ir_intensity_front_right": {
+          "visible": false
+        },
+        "frame:empty": {
+          "visible": false
+        },
+        "frame:create3/ir_intensity_side_left": {
+          "visible": false
+        },
+        "frame:create3/ir_omni": {
+          "visible": false
+        },
+        "frame:standard_dock/yellow_buoy_link": {
+          "visible": false
+        },
+        "frame:standard_dock": {
+          "visible": false
+        },
+        "frame:standard_dock/red_buoy_link": {
+          "visible": false
+        },
+        "frame:standard_dock/halo_link": {
+          "visible": false
+        },
+        "frame:standard_dock/green_buoy_link": {
+          "visible": false
+        },
+        "frame:standard_dock/std_dock_link": {
+          "visible": false
+        },
+        "frame:base_footprint": {
+          "visible": false
+        },
+        "frame:laser_frame": {
+          "visible": true
+        },
+        "frame:bump_front_center": {
+          "visible": false
+        },
+        "frame:base_link": {
+          "visible": true
+        },
+        "frame:bump_front_left": {
+          "visible": false
+        },
+        "frame:bump_front_right": {
+          "visible": false
+        },
+        "frame:bump_left": {
+          "visible": false
+        },
+        "frame:bump_right": {
+          "visible": false
+        },
+        "frame:button_1": {
+          "visible": false
+        },
+        "frame:button_2": {
+          "visible": false
+        },
+        "frame:button_power": {
+          "visible": false
+        },
+        "frame:cliff_front_left": {
+          "visible": false
+        },
+        "frame:cliff_front_right": {
+          "visible": false
+        },
+        "frame:cliff_side_left": {
+          "visible": false
+        },
+        "frame:cliff_side_right": {
+          "visible": false
+        },
+        "frame:front_caster_link": {
+          "visible": false
+        },
+        "frame:imu_link": {
+          "visible": false
+        },
+        "frame:ir_intensity_front_center_left": {
+          "visible": false
+        },
+        "frame:ir_intensity_front_center_right": {
+          "visible": false
+        },
+        "frame:ir_intensity_front_left": {
+          "visible": false
+        },
+        "frame:ir_intensity_front_right": {
+          "visible": false
+        },
+        "frame:ir_intensity_left": {
+          "visible": false
+        },
+        "frame:ir_intensity_right": {
+          "visible": false
+        },
+        "frame:ir_intensity_side_left": {
+          "visible": false
+        },
+        "frame:ir_omni": {
+          "visible": false
+        },
+        "frame:mouse": {
+          "visible": false
+        },
+        "frame:oakd_imu_frame": {
+          "visible": false
+        },
+        "frame:oakd_link": {
+          "visible": false
+        },
+        "frame:oakd_left_camera_frame": {
+          "visible": false
+        },
+        "frame:oakd_left_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:oakd_rgb_camera_frame": {
+          "visible": false
+        },
+        "frame:oakd_rgb_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:oakd_right_camera_frame": {
+          "visible": false
+        },
+        "frame:oakd_right_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:left_wheel": {
+          "visible": false
+        },
+        "frame:wheel_drop_left": {
+          "visible": false
+        },
+        "frame:right_wheel": {
+          "visible": false
+        },
+        "frame:wheel_drop_right": {
+          "visible": false
+        },
+        "frame:create3/oakd_rgb_camera_frame/rgbd_camera": {
+          "visible": false
+        }
+      },
+      "topics": {
+        "/scan": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "gradient",
+          "colorMap": "turbo",
+          "pointSize": 9
+        },
+        "/robot_description": {
+          "visible": false
+        },
+        "/map": {
+          "visible": true
+        },
+        "/slam_toolbox/scan_visualization": {
+          "visible": false
+        },
+        "/slam_toolbox/graph_visualization": {
+          "visible": false
+        },
+        "/move_base_simple/goal": {
+          "visible": false
+        },
+        "/color/image": {
+          "visible": false
+        }
+      },
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {}
+    },
+    "RosOut!m09x97": {
+      "searchTerms": [],
+      "minLogLevel": 1
+    },
+    "ImageViewPanel!3mnp456": {
+      "cameraTopic": "/color/image",
+      "enabledMarkerTopics": [],
+      "mode": "fit",
+      "pan": {
+        "x": 129.49671284210908,
+        "y": -265.7101085745694
+      },
+      "rotation": 0,
+      "synchronize": false,
+      "transformMarkers": false,
+      "zoom": 1.6701160614035353
+    },
+    "Gauge!8mp7oi": {
+      "path": "/battery_state.percentage",
+      "minValue": 0,
+      "maxValue": 1,
+      "colorMap": "red-yellow-green",
+      "colorMode": "colormap",
+      "gradient": [
+        "#0000ff",
+        "#ff00ff"
+      ],
+      "reverse": false
+    },
+    "RawMessages!2h7tlgh": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/cmd_vel"
+    },
+    "Plot!quc9y2": {
+      "title": "Plot",
+      "paths": [
+        {
+          "value": "/cmd_vel.linear.x",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/cmd_vel.linear.y",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/cmd_vel.linear.z",
+          "enabled": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "foxglovePanelTitle": "Plot"
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "first": {
+      "first": "3D!284p3aq",
+      "second": "RosOut!m09x97",
+      "direction": "column",
+      "splitPercentage": 73.3495145631068
+    },
+    "second": {
+      "first": "ImageViewPanel!3mnp456",
+      "second": {
+        "first": "Gauge!8mp7oi",
+        "second": {
+          "direction": "row",
+          "second": "Plot!quc9y2",
+          "first": "RawMessages!2h7tlgh",
+          "splitPercentage": 49.80237154150197
+        },
+        "direction": "row",
+        "splitPercentage": 39.76545842217484
+      },
+      "direction": "column",
+      "splitPercentage": 62.78625698566417
+    },
+    "direction": "row",
+    "splitPercentage": 44.98710177001288
+  }
+}
