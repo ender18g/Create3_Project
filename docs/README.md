@@ -154,7 +154,8 @@ will unzip this file.
 ## Running Foxglove Studio
 Foxglove studio allows viewing visualizations and subscribing/publishing to ros2 topics through the web browser. This allows students to view the robot status and performance without having to install ROS2. Only a web browser (Chrome is recommended) is required.
 
-![Foxglove](images/foxglove_sim.png)
+![Foxglove Simulation](images/foxglove_sim.png)
+![Foxglove Hardware](images/foxglove1.png)
 
 Install Foxglove bridge
 ```
@@ -166,8 +167,13 @@ Start your Foxglove bridge on a computer with ROS2 Galactic:
 ros2 run foxglove_bridge foxglove_bridge_launch.xml port:=8765
 ```
 
-Now visit studio.foxglove.dev to see your dashboard and visualizations:
-[Foxglove Studio Web GUI](https://studio.foxglove.dev)
+### Load the Foxglove Studio Web Interface
+Visit Foxglove studio (this link will preload websocket port 8765 as the data source):
+[Foxglove Studio Web GUI]([https://studio.foxglove.dev](https://studio.foxglove.dev/?ds=foxglove-websocket&ds.url=ws%3A%2F%2Flocalhost%3A8765))
+
+### Load the `rsp_project_create3.json` layout:
+
+
 
 
 
