@@ -171,7 +171,9 @@ ros2 run foxglove_bridge foxglove_bridge_launch.xml port:=8765
 Visit Foxglove studio (this link will preload websocket port 8765 as the data source):
 [Foxglove Studio Web GUI]([https://studio.foxglove.dev](https://studio.foxglove.dev/?ds=foxglove-websocket&ds.url=ws%3A%2F%2Flocalhost%3A8765))
 
-### Load the `rsp_project_create3.json` layout:
+### Load the custom layout:
+
+`rsp_project_create3.json`
 
 
 
