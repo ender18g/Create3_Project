@@ -38,7 +38,13 @@ Install the dependencies
 ```
 cd ~/project_ws
 rosdep update --include-eol-distros
-sudo apt-get update
+```
+Update package manager
+```
+sudo apt update
+```
+Install ROS2 Dependencies
+```
 rosdep install --from-path src -yi
 ```
 Build the packages
@@ -55,12 +61,15 @@ source install/setup.bash
 ```
 
 ## Simulation with Ignition Gazebo
+
+### SLAM Simulation
 ![Ignition Simulation](images/simulation.png)
 To run lidar SLAM in simulation with Ignition Gazebo, run the example launch file:
 ```
 ros2 launch create3_sim_total create3_sim_SLAM.launch.py
 ```
 
+### Apriltag Vision Simulation
 ![Apriltag Ignition Simulation](images/Apriltag_sim.png)
 To run AprilTag Detection in simulation with Ignition Gazebo, run the example launch file:
 ```
@@ -73,7 +82,7 @@ ros2 topic echo /tf
 ```
 
 ## Using the Hardware
-### Starting Robot
+### Booting Robot
 Power on the create3 by holding down the power button. The Raspberry Pi 4 will boot and will automatically begin publishing Lidar Scan messages, camera images, along with robot information topics.
 
  To setup and manually start the sensor nodes on the Raspberry Pi:
@@ -105,7 +114,6 @@ Open the SLAM toolbox:
 ```
 ros2 launch create3_lidar slam_toolbox_launch.py
 ```
-
 Start RVIZ2
 ```
 ros2 run rviz2 rviz2 -d  ~/project_ws/install/create3_lidar/share/create3_lidar/rviz/create3_lidar.rviz
@@ -144,11 +152,9 @@ will unzip this file.
 
 
 ## Running Foxglove Studio
-
-![Foxglove](images/foxglove1.png)
-
-
 Foxglove studio allows viewing visualizations and subscribing/publishing to ros2 topics through the web browser. This allows students to view the robot status and performance without having to install ROS2. Only a web browser (Chrome is recommended) is required.
+
+![Foxglove](images/foxglove_sim.png)
 
 Install Foxglove bridge
 ```
@@ -160,8 +166,8 @@ Start your Foxglove bridge on a computer with ROS2 Galactic:
 ros2 run foxglove_bridge foxglove_bridge_launch.xml port:=8765
 ```
 
-Now visit studio.foxglove.dev to see your dashboard and visualizations.
-
+Now visit studio.foxglove.dev to see your dashboard and visualizations:
+[Foxglove Studio Web GUI](https://studio.foxglove.dev)
 
 
 
