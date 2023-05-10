@@ -23,6 +23,7 @@
   <depend>apriltag</depend>
   <depend>apriltag_msgs</depend>
   <depend>apriltag_ros</depend>
+  <depend>foxglove_bridge</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
