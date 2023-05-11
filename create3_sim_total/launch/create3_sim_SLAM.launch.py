@@ -186,6 +186,11 @@ def generate_launch_description():
     slam_rviz = Node(package='rviz2', executable='rviz2',
                        arguments=['-d', create3_lidar_rviz_config],
                        output='screen')
+    
+    # foxglove bridge
+    foxglove_bridge = Node(package='foxglove_bridge', executable='foxglove_bridge',
+                           arguments=['port:=8765'])
+    
 
     # Create launch description and add actions
     ld = LaunchDescription(ARGUMENTS)
@@ -201,4 +206,5 @@ def generate_launch_description():
     ld.add_action(create3_ignition_nodes)
     ld.add_action(create3_lidar_slam)
     ld.add_action(slam_rviz)
+    ld.add_action(foxglove_bridge)
     return ld
