@@ -69,6 +69,9 @@ To run lidar SLAM in simulation with Ignition Gazebo, run the example launch fil
 ros2 launch create3_sim_total create3_sim_SLAM.launch.py
 ```
 
+Note: In order to drive the robot, you will need to alter the velocity values in the Teleop panel:
+![IGN Teleop Panel](images/teleop_ign.png)
+
 ### Apriltag Vision Simulation
 ![Apriltag Ignition Simulation](images/Apriltag_sim.png)
 To run AprilTag Detection in simulation with Ignition Gazebo, run the example launch file:
@@ -152,22 +155,26 @@ will unzip this file.
 
 
 ## Running Foxglove Studio
-Foxglove studio allows viewing visualizations and subscribing/publishing to ros2 topics through the web browser. This allows students to view the robot status and performance without having to install ROS2. Only a web browser (Chrome is recommended) is required.
+Foxglove studio allows viewing visualizations and subscribing/publishing to ros2 topics by connecting to a ros2 host (such as the raspberry pi on the create3)through the web browser. This allows students to view the robot status and performance without having to install ROS2. Only a web browser (Chrome is recommended) is required. 
 
 ![Foxglove Simulation](images/foxglove_sim.png)
 ![Foxglove Hardware](images/foxglove1.png)
 
-Install Foxglove bridge
+
+### Load the Foxglove Studio Web Interface
+
+The SLAM Simulation will automatically launch Foglove Bridge on port 8765
 ```
-sudo apt install ros-galactic-foxglove-bridge
+ros2 launch create3_sim_total create3_sim_SLAM.launch.py
 ```
 
-Start your Foxglove bridge on a computer with ROS2 Galactic:
+If running any other simulation, you can manually start the Foxglove Bridge:
 ```
 ros2 run foxglove_bridge foxglove_bridge_launch.xml port:=8765
 ```
 
-### Load the Foxglove Studio Web Interface
+After starting the simulation, perform the following steps to view Foxglove Studio Visualiations:
+
 Visit Foxglove studio (this link will preload websocket port 8765 as the data source):
 [Foxglove Studio Web GUI]([https://studio.foxglove.dev](https://studio.foxglove.dev/?ds=foxglove-websocket&ds.url=ws%3A%2F%2Flocalhost%3A8765))
 
