@@ -176,9 +176,9 @@ ros2 run foxglove_bridge foxglove_bridge_launch.xml port:=8765
 After starting the simulation, perform the following steps to view Foxglove Studio Visualiations:
 
 Visit Foxglove studio (this link will preload websocket port 8765 as the data source):
-[Foxglove Studio Web GUI]([https://studio.foxglove.dev](https://studio.foxglove.dev/?ds=foxglove-websocket&ds.url=ws%3A%2F%2Flocalhost%3A8765))
+[Foxglove Studio Web GUI](https://studio.foxglove.dev/?ds=foxglove-websocket&ds.url=ws%3A%2F%2Flocalhost%3A8765)
 
-### Load the custom layout:
+### Load the custom layout
 1. Download the custom layout file by right clicking & selecting **Save Link As** on the following link [Foxglove Layout Link (JSON)](https://raw.githubusercontent.com/ender18g/Create3_Project/main/docs/images/rsp_project_create3.json)
 2. Select the **Layout** icon on the left top area of the page
 3. Select **Import Layout** icon
