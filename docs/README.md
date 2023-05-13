@@ -68,8 +68,7 @@ To run lidar SLAM in simulation with Ignition Gazebo, run the example launch fil
 ```
 ros2 launch create3_sim_total create3_sim_SLAM.launch.py
 ```
-
-Note: In order to drive the robot, you will need to alter the velocity values in the Teleop panel:
+Note: In order to drive the robot, you will need to alter the velocity values in the Teleop panel:\
 ![IGN Teleop Panel](images/teleop_ign.png)
 
 ### Apriltag Vision Simulation
