@@ -169,7 +169,7 @@ ros2 launch create3_sim_total create3_sim_SLAM.launch.py
 
 If running any other simulation, you can manually start the Foxglove Bridge:
 ```
-ros2 run foxglove_bridge foxglove_bridge_launch.xml port:=8765
+ros2 run foxglove_bridge foxglove_bridge port:=8765
 ```
 
 After starting the simulation, perform the following steps to view Foxglove Studio Visualiations:
